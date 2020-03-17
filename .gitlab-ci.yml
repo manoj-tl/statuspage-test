@@ -20,6 +20,8 @@ before_script:
 #  - ls -lrt .terraform/plugins/darwin_amd64/
   - terraform --version
   - terraform init
+  - ls -lrt
+  allow_failure: true
 
 stages:
   - validate
