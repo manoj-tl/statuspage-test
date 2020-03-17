@@ -16,11 +16,12 @@ cache:
 
 before_script:
   - pwd
-  - ls -lrt $GOPATH/src/github.com/hashicorp/terraform/
-  - mkdir -p ~/.terraform.d/plugins/linux_amd64
-  - git clone https://github.com/yannh/terraform-provider-statuspage.git $GOPATH/src/github.com/hashicorp/terraform/plugin/
+#  - ls -lrt $GOPATH/src/github.com/hashicorp/terraform/
+#  - mkdir -p ~/.terraform.d/plugins/linux_amd64
+#  - git clone https://github.com/yannh/terraform-provider-statuspage.git $GOPATH/src/github.com/hashicorp/terraform/plugin/
   - terraform --version
   - terraform init
+  - ls -lrt
 
 stages:
   - validate
