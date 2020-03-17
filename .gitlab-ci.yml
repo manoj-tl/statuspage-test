@@ -24,19 +24,19 @@ before_script:
   - ls -lrt
 
 stages:
-  - validate
+#  - validate
   - plan
   - apply
   - deploy
   - destroy
 
-validate:
-  stage: validate
-  script:
-    - terraform validate
-#    - terraform fmt -check=true
-  only:
-    - branches
+#validate:
+#  stage: validate
+#  script:
+#    - terraform validate
+##    - terraform fmt -check=true
+#  only:
+#    - branches
 
 merge review:
   stage: plan
