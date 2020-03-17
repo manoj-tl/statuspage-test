@@ -42,7 +42,7 @@ stages:
 merge review:
   stage: plan
   script:
-    - terraform plan --debug
+    - terraform plan
     - echo \`\`\`diff > plan.txt
     - terraform show -no-color ${PLAN} | tee -a plan.txt
     - echo \`\`\` >> plan.txt
