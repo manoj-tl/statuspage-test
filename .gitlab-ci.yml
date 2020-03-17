@@ -21,7 +21,6 @@ before_script:
   - terraform --version
   - terraform init
   - ls -lrt
-  allow_failure: true
 
 stages:
   - validate
