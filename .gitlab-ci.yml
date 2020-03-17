@@ -1,5 +1,5 @@
 image:
-  name: hashicorp/terraform:light
+  name: hashicorp/terraform:full
   entrypoint:
     - '/usr/bin/env'
     - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
@@ -15,7 +15,7 @@ cache:
     - .terraform
 
 before_script:
-  - echo $GOPATH
+  - ls -al
   - ls -lrt $GOPATH/src/github.com/hashicorp/terraform/
   - mkdir -p ~/.terraform.d/plugins/linux_amd64
   - git clone https://github.com/yannh/terraform-provider-statuspage.git ~/.terraform.d/plugins/linux_amd64/
