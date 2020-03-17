@@ -1,5 +1,5 @@
 image:
-  name: docker pull hashicorp/terraform:0.12.23
+  name: hashicorp/terraform:0.12.23
   entrypoint:
     - '/usr/bin/env'
     - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
