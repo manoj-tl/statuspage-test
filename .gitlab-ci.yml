@@ -8,6 +8,7 @@ image:
 variables:
   PLAN: plan.tfplan
   TF_IN_AUTOMATION: "true"
+  TF_LOG : "DEBUG"
 
 cache:
   key: "$CI_COMMIT_REF_SLUG"
@@ -41,7 +42,7 @@ stages:
 merge review:
   stage: plan
   script:
-    - terraform plan
+    - terraform plan --debug
     - echo \`\`\`diff > plan.txt
     - terraform show -no-color ${PLAN} | tee -a plan.txt
     - echo \`\`\` >> plan.txt
