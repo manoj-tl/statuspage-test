@@ -15,17 +15,26 @@ cache:
     - .terraform
 
 before_script:
-  - ls -lrt
-  - mkdir -p .terraform/plugins/linux_amd64
-  - mv plugins/* .terraform/plugins/linux_amd64/
+  - ls -lrt ~/.terraform.d/
+  - mkdir -p ~/.terraform.d/plugins/linux_amd64
+  - git clone https://github.com/yannh/terraform-provider-statuspage.git ~/.terraform.d/plugins/linux_amd64/
   - terraform --version
   - terraform init
 
 stages:
+  - validate
   - plan
   - apply
   - deploy
   - destroy
+
+validate:
+  stage: validate
+  script:
+    - terraform validate
+#    - terraform fmt -check=true
+  only:
+    - branches
 
 merge review:
   stage: plan
