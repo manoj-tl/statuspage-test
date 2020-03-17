@@ -22,19 +22,10 @@ before_script:
   - terraform init
 
 stages:
-  - validate
   - plan
   - apply
   - deploy
   - destroy
-
-validate:
-  stage: validate
-  script:
-    - terraform validate
-    - terraform fmt -check=true
-  only:
-    - branches
 
 merge review:
   stage: plan
