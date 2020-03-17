@@ -20,7 +20,7 @@ before_script:
 #  - mkdir -p ~/.terraform.d/plugins/linux_amd64
 #  - git clone https://github.com/yannh/terraform-provider-statuspage.git $GOPATH/src/github.com/hashicorp/terraform/plugin/
   - terraform --version
-  - terraform init
+  - terraform init -upgrade
   - ls -lrt
 
 stages:
