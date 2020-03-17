@@ -15,12 +15,8 @@ cache:
     - .terraform
 
 before_script:
-  - ls -lrt
-  - mkdir -p .terraform/plugins/linux_amd64
-  - cp plugins/* .terraform/plugins/linux_amd64/
   - terraform --version
   - terraform init
-  - ls -lrt
 
 stages:
   - validate
@@ -32,6 +28,7 @@ stages:
 validate:
   stage: validate
   script:
+    - terraform validate
     - terraform fmt -check=true
   only:
     - branches
