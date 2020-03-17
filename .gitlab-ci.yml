@@ -8,7 +8,7 @@ image:
 variables:
   PLAN: plan.tfplan
   TF_IN_AUTOMATION: "true"
-  TF_LOG : "DEBUG"
+  TF_LOG : "TRACE"
 
 cache:
   key: "$CI_COMMIT_REF_SLUG"
