@@ -15,7 +15,7 @@ cache:
     - .terraform
 
 before_script:
-  - ls -lrt ~/.terraform.d/
+  - ls -lrt $GOPATH/src/github.com/hashicorp/terraform/
   - mkdir -p ~/.terraform.d/plugins/linux_amd64
   - git clone https://github.com/yannh/terraform-provider-statuspage.git ~/.terraform.d/plugins/linux_amd64/
   - terraform --version
