@@ -15,9 +15,9 @@ cache:
     - .terraform
 
 before_script:
-  - cp plugins/* .terraform/plugins/darwin_amd64/
   - ls -lrt
-  - ls -lrt .terraform/plugins/darwin_amd64/
+#  - cp plugins/* .terraform/plugins/darwin_amd64/
+#  - ls -lrt .terraform/plugins/darwin_amd64/
   - terraform --version
   - terraform init
 
